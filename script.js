@@ -7,7 +7,7 @@ var newGrid = function(begin){
 	$("#container").empty();
 	var num = 4;
 	if(!begin){
-		num = prompt("How many squares per row/column do you want?");
+		num = prompt("How many squares per row/column do you want? (up to 12)");
 		generateSquares(num);
 		if(num > 4){
 			$(".square").css("width", (158/num));
