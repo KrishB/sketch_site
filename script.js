@@ -1,8 +1,6 @@
 $(document).ready(function(){
 	newGrid(true);
-	$(".square").hover(function(){
-		$(this).css("background-color", "blue");
-	});
+	highlightSquares();
 });
 
 var newGrid = function(begin){
@@ -26,5 +24,13 @@ var newGrid = function(begin){
 var generateSquares = function(num){
 	for(var i = 0; i < Math.pow(num, 2); i++){
 			$("#container").append("<div class='square'></div>");
-		}
+	}
+	highlightSquares();
+}
+
+var highlightSquares = function(){
+	$(".square").hover(function(){
+		var randomColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+		$(this).css("background-color", randomColor);
+	});
 }
